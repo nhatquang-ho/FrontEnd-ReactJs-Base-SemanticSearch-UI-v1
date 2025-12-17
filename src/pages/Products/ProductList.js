@@ -84,8 +84,8 @@ const ProductList = () => {
         setProducts(response.content || response);
         setPagination(prev => ({
           ...prev,
-          totalElements: response.totalElements || response.length,
-          totalPages: response.totalPages || Math.ceil(response.length / prev.size)
+          totalElements: response.totalElements || response.content.length,
+          totalPages: response.totalPages || Math.ceil(response.content.length / prev.size)
         }));
       }
     } catch (error) {

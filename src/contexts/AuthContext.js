@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import authService from '../services/authService';
+import { USER_ROLES } from '../utils/constants';
 
 export const AuthContext = createContext({});
 
@@ -104,7 +105,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const isAdmin = () => {
-    return user?.roles?.includes('ADMIN') || false;
+    return user?.roles?.includes(USER_ROLES.ADMIN) || false;
   };
 
   const hasRole = (roleName) => {
