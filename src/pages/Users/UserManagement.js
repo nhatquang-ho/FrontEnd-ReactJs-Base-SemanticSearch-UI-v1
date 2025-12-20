@@ -298,7 +298,7 @@ const UserManagement = () => {
         {/* Pagination */}
         <TablePagination
           component="div"
-          count={pagination.totalElements}
+          count={pagination.totalElements ?? users.length ?? 0}
           page={pagination.page}
           onPageChange={handlePageChange}
           rowsPerPage={pagination.size}
