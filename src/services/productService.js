@@ -92,6 +92,12 @@ const productService = {
     return response.data;
   },
 
+  // Desactivate product
+  desactivateProduct: async (id) => {
+    const response = await api.patch(`/products/${id}/desactivate`);
+    return response.data;
+  },
+
   // Restore product
   restoreProduct: async (id) => {
     const response = await api.patch(`/products/${id}/restore`);

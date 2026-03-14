@@ -134,7 +134,7 @@ const ProductList = () => {
       } else if (action === 'toggle') {
         if (product.isActive) {
           // If currently active, we would deactivate (soft delete)
-          await productService.deleteProduct(product.id);
+          await productService.desactivateProduct(product.id);
         } else {
           // If currently inactive, restore it
           await productService.restoreProduct(product.id);
